@@ -3,6 +3,7 @@ import "user.dart";
 import "cache_config.dart";
 part 'profile.g.dart';
 
+/// 用户信息
 @JsonSerializable()
 class Profile {
     Profile();

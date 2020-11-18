@@ -162,6 +162,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.2.9"
+  dio:
+    dependency: "direct main"
+    description:
+      name: dio
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "3.0.10"
   fixnum:
     dependency: transitive
     description:
@@ -347,6 +354,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.4.0"
+  provider:
+    dependency: "direct main"
+    description:
+      name: provider
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "3.2.0"
   pub_semver:
     dependency: transitive
     description:
@@ -500,5 +514,5 @@ packages:
     source: hosted
     version: "2.2.1"
 sdks:
-  dart: ">=2.4.0 <3.0.0"
+  dart: ">2.4.0 <3.0.0"
   flutter: ">=1.6.7 <2.0.0"

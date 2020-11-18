@@ -2,6 +2,7 @@ import 'package:json_annotation/json_annotation.dart';
 import "user.dart";
 part 'repo.g.dart';
 
+/// 项目信息
 @JsonSerializable()
 class Repo {
     Repo();
