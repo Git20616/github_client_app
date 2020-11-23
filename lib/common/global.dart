@@ -39,7 +39,7 @@ class Global {
       ..maxAge = 3000
       ..maxCount = 100;
 
-    //网络初始化
+    // TODO 网络初始化
   }
 
   // 持久化Profile
