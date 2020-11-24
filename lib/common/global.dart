@@ -20,7 +20,7 @@ class Global {
 
   // 可选主题列表
   static List<MaterialColor> get themes => _themes;
-  // dart.vm.product 环境标识位
+  /// dart.vm.product 环境标识位，release版返回true
   static bool get isRelease => bool.fromEnvironment("dart.vm.product");
 
   // 初始化全局信息，会在App启动时执行
