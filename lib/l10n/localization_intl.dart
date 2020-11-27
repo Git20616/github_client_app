@@ -24,7 +24,7 @@ class GmLocalizations {
   // TODO 多语言资源
   String get title => Intl.message("Flutter App",
       name: "title", desc: "Title for the Demo application");
-
+  //未读邮件数量
   String remainingEmailsMessage(int howMany) {
     return Intl.plural(
       howMany,
@@ -37,6 +37,12 @@ class GmLocalizations {
       examples: const {'howMany': 42, 'userName': 'Fred'},
     );
   }
+  //主页名称
+  String get home => Intl.message("Github Client", name: "home");
+  //登录
+  String get login => Intl.message("Login", name: "login");
+  //暂无描述
+  String get noDescription => Intl.message("No description!", name: "noDescription");
 }
 
 // Delegate类的职责是在Locale改变时加载新的Locale资源
