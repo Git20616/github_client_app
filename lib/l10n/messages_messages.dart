@@ -23,7 +23,16 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
+    "cancel" : MessageLookupByLibrary.simpleMessage("cancel"),
+    "home" : MessageLookupByLibrary.simpleMessage("Github Client"),
+    "language" : MessageLookupByLibrary.simpleMessage("Language"),
+    "login" : MessageLookupByLibrary.simpleMessage("Login"),
+    "logout" : MessageLookupByLibrary.simpleMessage("Logout"),
+    "logoutTip" : MessageLookupByLibrary.simpleMessage("Are you sure you want to quit your current account?"),
+    "noDescription" : MessageLookupByLibrary.simpleMessage("No description!"),
     "remainingEmailsMessage" : m0,
-    "title" : MessageLookupByLibrary.simpleMessage("Flutter App")
+    "theme" : MessageLookupByLibrary.simpleMessage("Theme"),
+    "title" : MessageLookupByLibrary.simpleMessage("Flutter App"),
+    "yes" : MessageLookupByLibrary.simpleMessage("yes")
   };
 }

@@ -22,8 +22,28 @@ class GmLocalizations {
   }
 
   // TODO 多语言资源
-  String get title => Intl.message("Flutter App",
-      name: "title", desc: "Title for the Demo application");
+  //取消
+  String get cancel => Intl.message("cancel", name: "cancel");
+  //邮箱或手机号码
+  String get emailOrPhone => Intl.message("Email or cell phone number", name: "emailOrPhone");
+  //主页名称
+  String get home => Intl.message("Github Client", name: "home");
+  //输入密码
+  String get inputPassword => Intl.message("Input password", name: "inputPassword");
+  //语言
+  String get language => Intl.message("Language", name: "language");
+  //登录
+  String get login => Intl.message("Login", name: "login");
+  //登出
+  String get logout => Intl.message("Logout", name: "logout");
+  //登出提示
+  String get logoutTip => Intl.message("Are you sure you want to quit your current account?", name: "logoutTip");
+  //暂无描述
+  String get noDescription => Intl.message("No description!", name: "noDescription");
+  //密码
+  String get password => Intl.message("Password", name: "password");
+  //密码不能为空
+  String get passwordRequired => Intl.message("Password cannot be empty!", name: "passwordRequired");
   //未读邮件数量
   String remainingEmailsMessage(int howMany) {
     return Intl.plural(
@@ -37,20 +57,35 @@ class GmLocalizations {
       examples: const {'howMany': 42, 'userName': 'Fred'},
     );
   }
-  //主页名称
-  String get home => Intl.message("Github Client", name: "home");
-  //登录
-  String get login => Intl.message("Login", name: "login");
-  //暂无描述
-  String get noDescription => Intl.message("No description!", name: "noDescription");
+  //主题
+  String get theme => Intl.message("Theme", name: "theme");
+  //标题
+  String get title => Intl.message("Flutter App",
+      name: "title", desc: "Title for the Demo application");
+  //用户名
+  String get userName => Intl.message("User Name", name: "userName");
+  //用户名或密码不正确
+  String get userNameOrPasswordWrong => Intl.message("User name or password is not correct!", name: "userNameOrPasswordWrong");
+  //用户名不能为空
+  String get userNameRequired => Intl.message("User name cannot be empty!", name: "userNameRequired");
+  //确认
+  String get yes => Intl.message("yes", name: "yes");
+
 }
 
 // Delegate类的职责是在Locale改变时加载新的Locale资源
 class GmLocalizationsDelegate extends LocalizationsDelegate<GmLocalizations> {
+  const GmLocalizationsDelegate();
+
+  // TODO Reflect
+  // Warning: This application's locale, zh_CN, is not supported by all of its localization delegates.
+  // A GmLocalizations delegate that supports the zh_CN locale was not found.
+
   @override
   bool isSupported(Locale locale) {
+    // TODO 这里一定要添加supportedLocales中所有的languageCode，否则会报错
     // 是否支持某个Local
-    return ["en", "zn"].contains(locale.languageCode);
+    return ["en", "zh"].contains(locale.languageCode);
   }
 
   @override

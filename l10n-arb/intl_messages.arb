@@ -1,5 +1,5 @@
 {
-  "@@last_modified": "2020-11-25T15:23:34.223190",
+  "@@last_modified": "2020-11-30T15:02:48.346004",
   "title": "Flutter App",
   "@title": {
     "description": "Title for the Demo application",
@@ -15,5 +15,50 @@
         "example": 42
       }
     }
+  },
+  "home": "Github Client",
+  "@home": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "login": "Login",
+  "@login": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "noDescription": "No description!",
+  "@noDescription": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "theme": "Theme",
+  "@theme": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "language": "Language",
+  "@language": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "logout": "Logout",
+  "@logout": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "logoutTip": "Are you sure you want to quit your current account?",
+  "@logoutTip": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "cancel": "cancel",
+  "@cancel": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "yes": "yes",
+  "@yes": {
+    "type": "text",
+    "placeholders": {}
   }
 }

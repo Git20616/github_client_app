@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
             theme: ThemeData(
               primarySwatch: themeModel.theme,
             ),
-            //title: GmLocalizations.of(context).title,//这里会返回null
+            // title: GmLocalizations.of(context).title,//这里会返回null
             onGenerateTitle: (context) => GmLocalizations.of(context).title,
             home: HomeRoute(),
             locale: LocaleModel().getLocale(),

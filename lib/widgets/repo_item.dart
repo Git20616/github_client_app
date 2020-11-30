@@ -98,8 +98,47 @@ class _RepoItemState extends State<RepoItem> {
   Widget _buildBottom() {
     const num paddingWidth = 10;
     return IconTheme(
-      data: null,
-      child: null,
+      data: IconThemeData(
+        color: Colors.grey,
+        size: 15,
+      ),
+      child: DefaultTextStyle(
+        style: TextStyle(color: Colors.grey, fontSize: 12),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          child: Builder(
+            builder: (context) {
+              List<Widget> children = <Widget>[
+                Icon(Icons.star),
+                Text("" +
+                    widget.repo.stargazers_count
+                        .toString()
+                        .padRight(paddingWidth)), //设置与右侧元素的距离
+                Icon(Icons.info_outline),
+                Text("" +
+                    widget.repo.open_issues_count
+                        .toString()
+                        .padRight(paddingWidth)),
+                Icon(MyIcons.fork),
+                Text("" +
+                    widget.repo.forks_count.toString().padRight(paddingWidth)),
+              ];
+              //是否为fork项目
+              if (widget.repo.fork) {
+                children.add(Text("Forked".padRight(paddingWidth)));
+              }
+              if(widget.repo.private) {
+                children.addAll(<Widget>[
+                  Icon(Icons.lock),
+                  Text("private".padRight(paddingWidth)),
+                ]);
+              }
+
+              return Row(children: children);
+            },
+          ),
+        ),
+      ),
     );
   }
 }

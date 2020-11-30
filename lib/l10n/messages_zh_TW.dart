@@ -19,11 +19,20 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'zh_TW';
 
-  static m0(howMany) => "{howMany,plural, =0{沒有未讀郵件}=1{有{howMany封未讀郵件}other{有${howMany}封未讀郵件}}";
+  static m0(howMany) => "${Intl.plural(howMany, zero: 'There are no emails left', one: 'There is ${howMany} email left', other: 'There are ${howMany} emails left')}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
+    "cancel" : MessageLookupByLibrary.simpleMessage("cancel"),
+    "home" : MessageLookupByLibrary.simpleMessage("Github Client"),
+    "language" : MessageLookupByLibrary.simpleMessage("Language"),
+    "login" : MessageLookupByLibrary.simpleMessage("Login"),
+    "logout" : MessageLookupByLibrary.simpleMessage("Logout"),
+    "logoutTip" : MessageLookupByLibrary.simpleMessage("Are you sure you want to quit your current account?"),
+    "noDescription" : MessageLookupByLibrary.simpleMessage("No description!"),
     "remainingEmailsMessage" : m0,
-    "title" : MessageLookupByLibrary.simpleMessage("Flutter應用")
+    "theme" : MessageLookupByLibrary.simpleMessage("Theme"),
+    "title" : MessageLookupByLibrary.simpleMessage("Flutter 應用"),
+    "yes" : MessageLookupByLibrary.simpleMessage("yes")
   };
 }
