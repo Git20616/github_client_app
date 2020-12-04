@@ -36,10 +36,66 @@ class _LoginRouteState extends State<LoginRoute> {
           autovalidate: true,
           child: Column(
             children: <Widget>[
+              TextFormField(
+                autofocus: _nameAutoFocus,
+                controller: _unameController,
+                decoration: InputDecoration(
+                  labelText: gm.userName,
+                  hintText: gm.emailOrPhone,
+                  prefixIcon: Icon(Icons.person),
+                ),
+                validator: (v) => v.trim().isNotEmpty ? null : gm.passwordRequired,
+              ),
+              TextFormField(
+                autofocus: !_nameAutoFocus,
+                controller: _pwdController,
+                obscureText: !pwdShow,
+                decoration: InputDecoration(
+                  labelText: gm.password,
+                  hintText: gm.inputPassword,
+                  prefixIcon: Icon(Icons.lock),
+                  suffixIcon: IconButton(
+                    icon: Icon(pwdShow ? Icons.visibility_off : Icons.visibility),
+                    onPressed: () {
+                      setState(() {
+                        pwdShow = !pwdShow;
+                      });
+                    },
+                  ),
+                ),
+                validator: (v) => v.trim().isNotEmpty ? null : gm.passwordRequired,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 25),
+                child: ConstrainedBox(
+                  constraints: BoxConstraints.expand(height: 55.0),
+                  child: RaisedButton(
+                    color: Theme.of(context).primaryColor,
+                    textColor: Colors.white,
+                    child: Text(gm.login),
+                    onPressed: _onLogin,
+                  ),
+                ),
+              ),
             ],
           ),
         ),
       ),
     );
+  }
+
+  void _onLogin() async {
+    if((_formKey.currentState as FormState).validate()) {
+      showLoading(context);
+      User user;
+      try {
+        user = await Git(context).login(_unameController.text, _pwdController.text);
+        // 因为登录页返回后，首页会build，所以我们传false，更新user后不触发更新
+        Provider.of<UserModel>(context, listen: false).user = user;
+      } catch (e) {
+        // 登录失败提示 DioError
+      } finally {
+      }
+    }
   }
 }
