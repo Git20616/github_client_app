@@ -34,16 +34,22 @@ class _HomeRouteState extends State<HomeRoute> {
       // 已登录，展示项目列表
       return InfiniteListView(
         onRetrieveData: (int page, List<Repo> items, bool refresh) async {
-          List<Repo> data = await Git(context).getRepos(
-            refresh: refresh,
-            queryParameters: {
-              "page": page,
-              "page_size": 20,
-            },
-          );
-          items.addAll(data);
-          // 返回值类型为bool，为true时表示还有数据，为false时则表示后续没有数据了。
-          return data.length == 20;
+          try {
+            List<Repo> data = await Git(context).getRepos(
+              refresh: refresh,
+              queryParameters: {
+                "page": page,
+                "page_size": 20,
+              },
+            );
+            items.addAll(data);
+            // 返回值类型为bool，为true时表示还有数据，为false时则表示后续没有数据了。
+            return data.length == 20;
+          }catch (e) {
+            // DioError
+            print("DioError: ${e.toString()}");
+            return false;
+          }
         },
         itemBuilder: (List<Repo> list, int index, BuildContext context) {
           // 项目信息的列表项
